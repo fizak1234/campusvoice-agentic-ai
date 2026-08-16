@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: grievance_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ai_grievance_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: grievance_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgrespassword@postgres:5432/ai_grievance_db
+      - JWT_SECRET_KEY=production_secret_key_change_me_2026
+      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
+      - OLLAMA_URL=http://host.docker.internal:11434/api/generate
+      - OLLAMA_MODEL=llama3.2:3b
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  pgdata:

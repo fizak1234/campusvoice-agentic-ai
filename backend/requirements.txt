@@ -1,0 +1,12 @@
+fastapi>=0.110.0
+uvicorn>=0.28.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9
+pyjwt>=2.8.0
+pwdlib[argon2]>=0.3.0
+argon2-cffi>=23.1.0
+python-dotenv>=1.0.1
+python-multipart>=0.0.9
+requests>=2.31.0
+email-validator>=2.1.0
+pydantic>=2.6.0
