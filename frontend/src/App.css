@@ -118,7 +118,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7c3aed, #9f7ef8);
+  background: linear-gradient(135deg, #9d7bd7, #9f7ef8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +129,7 @@
 }
 
 .user-avatar.admin {
-  background: linear-gradient(135deg, #4c1d95, #6d28d9);
+  background: linear-gradient(135deg, #8769b4, #9f7adb);
 }
 
 .user-info {

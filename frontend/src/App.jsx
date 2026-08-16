@@ -458,7 +458,7 @@ export default function App() {
             <div>
               <div className="brand-title">
                 CampusVoice Agentic AI
-                <span className="hackathon-badge">SOAIDEATHON-S1</span>
+                <span className="hackathon-badge">WAY OUT</span>
               </div>
               <div className="brand-sub">Human-in-the-Loop Autonomous Institutional Service Delivery</div>
             </div>
