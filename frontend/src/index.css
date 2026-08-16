@@ -1,62 +1,81 @@
 :root {
-  /* Core HSL Color Palette - Academic Modern */
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: #162032;
-  --bg-card-hover: #1e293b;
-  --bg-card-active: #223249;
-  --bg-input: #0e1524;
-  --bg-subtle: rgba(255, 255, 255, 0.03);
+  /* Lavender & White Core Palette */
+  --bg-primary: #f7f6fc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf9fd;
+  --bg-card-subtle: #f3f0fb;
+  --bg-input: #ffffff;
+  --bg-subtle: rgba(124, 58, 237, 0.04);
 
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-focus: #3b82f6;
-  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-color: #e9e5f5;
+  --border-focus: #7c3aed;
+  --border-subtle: #f0ecfa;
 
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
-  --text-inverse: #0b0f19;
+  --text-main: #1e1b4b;      /* Deep Royal Navy/Violet */
+  --text-body: #332f54;
+  --text-muted: #645f88;
+  --text-dim: #948ea5;
+  --text-inverse: #ffffff;
 
-  /* Brand & Accent Tones */
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
-  --primary-bg: rgba(59, 130, 246, 0.12);
+  /* Primary Lavender & Violet Accents */
+  --primary: #7c3aed;
+  --primary-light: #8b5cf6;
+  --primary-hover: #6d28d9;
+  --primary-soft: #ede9fe;
+  --primary-bg: rgba(124, 58, 237, 0.08);
 
-  /* Status Semantic Tones */
-  --status-pending: #f59e0b;
-  --status-pending-bg: rgba(245, 158, 11, 0.12);
-  --status-inprogress: #0ea5e9;
-  --status-inprogress-bg: rgba(14, 165, 233, 0.12);
-  --status-resolved: #10b981;
-  --status-resolved-bg: rgba(16, 185, 129, 0.12);
-  --status-rejected: #ef4444;
-  --status-rejected-bg: rgba(239, 68, 68, 0.12);
+  --lavender-100: #f5f3ff;
+  --lavender-200: #ede9fe;
+  --lavender-300: #ddd6fe;
+  --lavender-400: #c4b5fd;
+  --lavender-500: #a78bfa;
+  --lavender-600: #8b5cf6;
+  --lavender-700: #7c3aed;
+  --lavender-800: #6d28d9;
+  --lavender-900: #4c1d95;
 
-  /* Priority Semantic Tones */
+  /* Semantic Status Colors */
+  --status-pending: #d97706;
+  --status-pending-bg: #fef3c7;
+  --status-pending-border: #fde68a;
+
+  --status-inprogress: #0284c7;
+  --status-inprogress-bg: #e0f2fe;
+  --status-inprogress-border: #bae6fd;
+
+  --status-resolved: #059669;
+  --status-resolved-bg: #d1fae5;
+  --status-resolved-border: #a7f3d0;
+
+  --status-rejected: #e11d48;
+  --status-rejected-bg: #ffe4e6;
+  --status-rejected-border: #fecdd3;
+
+  /* Priority Colors */
+  --prio-urgent: #e11d48;
+  --prio-urgent-bg: #ffe4e6;
   --prio-high: #f43f5e;
-  --prio-high-bg: rgba(244, 63, 94, 0.12);
-  --prio-medium: #f59e0b;
-  --prio-medium-bg: rgba(245, 158, 11, 0.12);
-  --prio-low: #10b981;
-  --prio-low-bg: rgba(16, 185, 129, 0.12);
+  --prio-high-bg: #fff1f2;
+  --prio-medium: #d97706;
+  --prio-medium-bg: #fef3c7;
+  --prio-low: #059669;
+  --prio-low-bg: #d1fae5;
 
-  /* AI Sparkle Tone */
-  --ai-accent: #8b5cf6;
-  --ai-accent-bg: rgba(139, 92, 246, 0.12);
-
-  /* Typography & Layout */
+  /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Consolas, monospace;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
-  --shadow-popup: 0 20px 40px rgba(0, 0, 0, 0.6);
+  /* Soft Lavender Ambient Shadows */
+  --shadow-sm: 0 1px 3px rgba(76, 29, 149, 0.05);
+  --shadow-md: 0 4px 14px rgba(76, 29, 149, 0.07);
+  --shadow-lg: 0 10px 25px rgba(76, 29, 149, 0.08);
+  --shadow-popup: 0 20px 45px rgba(76, 29, 149, 0.14);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -71,8 +90,12 @@
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
-  color: var(--text-main);
-  line-height: 1.5;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(221, 214, 254, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(237, 233, 254, 0.4) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-body);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -85,10 +108,10 @@ body {
   flex-direction: column;
 }
 
-/* Scrollbar */
+/* Custom Soft Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -96,15 +119,15 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-card-hover);
+  background: var(--lavender-300);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-dim);
+  background: var(--lavender-500);
 }
 
-/* Form element resets */
+/* Form Resets */
 input, select, textarea, button {
   font-family: inherit;
   font-size: 0.95rem;
@@ -121,26 +144,17 @@ a {
   text-decoration: none;
 }
 
-/* Animations */
+/* Subtle Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-
-.spin-loader {
-  animation: spin 1s linear infinite;
+  animation: fadeIn 0.25s ease-out forwards;
 }
