@@ -1,65 +1,69 @@
 :root {
-  /* Lavender & White Core Palette */
-  --bg-primary: #f7f6fc;
-  --bg-secondary: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-hover: #faf9fd;
-  --bg-card-subtle: #f3f0fb;
+  /* Dominant Lavender Color System */
+  --bg-primary: #e8e2f8;
+  --bg-secondary: #f4f0fd;
+  --bg-card: #f9f7ff;
+  --bg-card-hover: #ffffff;
+  --bg-card-subtle: #ede6fc;
   --bg-input: #ffffff;
-  --bg-subtle: rgba(124, 58, 237, 0.04);
+  --bg-subtle: rgba(124, 58, 237, 0.08);
 
-  --border-color: #e9e5f5;
+  /* Lavender Borders */
+  --border-color: #d8cefa;
   --border-focus: #7c3aed;
-  --border-subtle: #f0ecfa;
+  --border-subtle: #e5defc;
+  --border-strong: #bcaaf8;
 
-  --text-main: #1e1b4b;      /* Deep Royal Navy/Violet */
-  --text-body: #332f54;
-  --text-muted: #645f88;
-  --text-dim: #948ea5;
+  /* Typography with high contrast over lavender */
+  --text-main: #1f144d;      /* Deep Royal Lavender/Midnight Violet */
+  --text-body: #342861;
+  --text-muted: #60518f;
+  --text-dim: #8b7bbd;
   --text-inverse: #ffffff;
 
-  /* Primary Lavender & Violet Accents */
+  /* Brand Lavender Tones */
   --primary: #7c3aed;
-  --primary-light: #8b5cf6;
+  --primary-light: #936cf7;
   --primary-hover: #6d28d9;
-  --primary-soft: #ede9fe;
-  --primary-bg: rgba(124, 58, 237, 0.08);
+  --primary-soft: #ddd6fe;
+  --primary-bg: rgba(124, 58, 237, 0.12);
 
-  --lavender-100: #f5f3ff;
-  --lavender-200: #ede9fe;
-  --lavender-300: #ddd6fe;
-  --lavender-400: #c4b5fd;
-  --lavender-500: #a78bfa;
-  --lavender-600: #8b5cf6;
-  --lavender-700: #7c3aed;
-  --lavender-800: #6d28d9;
-  --lavender-900: #4c1d95;
+  --lavender-50: #faf8ff;
+  --lavender-100: #f1ecfe;
+  --lavender-200: #e5dcfe;
+  --lavender-300: #d3c4fc;
+  --lavender-400: #bca3fb;
+  --lavender-500: #9f7ef8;
+  --lavender-600: #8555f3;
+  --lavender-700: #733be4;
+  --lavender-800: #5f2dc2;
+  --lavender-900: #2d1066;
 
-  /* Semantic Status Colors */
-  --status-pending: #d97706;
+  /* Semantic Status Colors (Pastel on Lavender) */
+  --status-pending: #b45309;
   --status-pending-bg: #fef3c7;
   --status-pending-border: #fde68a;
 
-  --status-inprogress: #0284c7;
+  --status-inprogress: #0369a1;
   --status-inprogress-bg: #e0f2fe;
   --status-inprogress-border: #bae6fd;
 
-  --status-resolved: #059669;
+  --status-resolved: #047857;
   --status-resolved-bg: #d1fae5;
   --status-resolved-border: #a7f3d0;
 
-  --status-rejected: #e11d48;
+  --status-rejected: #be123c;
   --status-rejected-bg: #ffe4e6;
   --status-rejected-border: #fecdd3;
 
   /* Priority Colors */
-  --prio-urgent: #e11d48;
+  --prio-urgent: #be123c;
   --prio-urgent-bg: #ffe4e6;
-  --prio-high: #f43f5e;
+  --prio-high: #e11d48;
   --prio-high-bg: #fff1f2;
-  --prio-medium: #d97706;
+  --prio-medium: #b45309;
   --prio-medium-bg: #fef3c7;
-  --prio-low: #059669;
+  --prio-low: #047857;
   --prio-low-bg: #d1fae5;
 
   /* Typography */
@@ -67,15 +71,15 @@
   --font-mono: 'JetBrains Mono', Consolas, monospace;
 
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 22px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
 
-  /* Soft Lavender Ambient Shadows */
-  --shadow-sm: 0 1px 3px rgba(76, 29, 149, 0.05);
-  --shadow-md: 0 4px 14px rgba(76, 29, 149, 0.07);
-  --shadow-lg: 0 10px 25px rgba(76, 29, 149, 0.08);
-  --shadow-popup: 0 20px 45px rgba(76, 29, 149, 0.14);
+  /* Lavender Ambient Glows & Shadows */
+  --shadow-sm: 0 2px 6px rgba(109, 40, 217, 0.06);
+  --shadow-md: 0 6px 18px rgba(109, 40, 217, 0.09);
+  --shadow-lg: 0 12px 30px rgba(109, 40, 217, 0.12);
+  --shadow-popup: 0 24px 50px rgba(76, 29, 149, 0.2);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,8 +95,10 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(221, 214, 254, 0.4) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(237, 233, 254, 0.4) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, #dfd5f8 0px, transparent 60%),
+    radial-gradient(at 100% 0%, #e2d9fa 0px, transparent 50%),
+    radial-gradient(at 50% 100%, #d8cafa 0px, transparent 60%),
+    radial-gradient(at 100% 100%, #eedffa 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--text-body);
   line-height: 1.55;
@@ -108,10 +114,10 @@ body {
   flex-direction: column;
 }
 
-/* Custom Soft Scrollbar */
+/* Custom Lavender Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -119,12 +125,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--lavender-300);
+  background: var(--lavender-400);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--lavender-500);
+  background: var(--lavender-600);
 }
 
 /* Form Resets */
@@ -144,7 +150,7 @@ a {
   text-decoration: none;
 }
 
-/* Subtle Keyframes */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
@@ -152,7 +158,7 @@ a {
 
 @keyframes pulseGlow {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 0.55; transform: scale(0.92); }
 }
 
 .animate-fade-in {
