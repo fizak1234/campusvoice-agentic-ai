@@ -1,93 +1,56 @@
-# 🎓 CampusVoice AI — College Grievance Management System
+# 🏛️ CampusVoice Agentic AI — SOA Institutional Service Delivery
 
-A full-stack, AI-powered College Grievance Management System built with **React**, **FastAPI**, **PostgreSQL**, and local **Ollama Llama 3.2 3B**.
-
----
-
-## 🌟 Key Features
-
-1. **Student Grievance Intake**:
-   - Submit grievances with titles, detailed descriptions, and quick-fill templates.
-   - Real-time pre-submission AI analysis preview.
-   - Comprehensive status tracking (`Pending`, `In Progress`, `Resolved`, `Rejected`).
-   - Search, filter by category, priority, and status.
-
-2. **Local AI Intelligence (Ollama + Llama 3.2 3B)**:
-   - **Zero paid APIs**: 100% local privacy-preserving LLM inference.
-   - **Automated Categorization**: `Academic`, `Scholarship`, `Hostel`, `Examination`, `Fees`, `Other`.
-   - **Automated Priority Detection**: `Low`, `Medium`, `High`.
-   - **Executive Summaries**: Synthesizes grievances into concise 1-2 sentence briefs for administrators.
-   - **Resilient Fallback**: Automatic graceful fallback if Ollama is unreachable.
-
-3. **Role-Based Admin Console**:
-   - Review grievances from all students with full contact context.
-   - Fast status transition controls (`Pending` → `In Progress` → `Resolved` → `Rejected`).
-   - Detailed inspection modal.
-   - Real-time resolution metrics.
-
-4. **Security & Authentication**:
-   - JWT access tokens with expiration.
-   - Password hashing with Argon2 / modern crypto.
-   - Role-based authorization guardrails.
-   - Fully decoupled secrets managed through `.env`.
+### 🏆 Winning Solution for **SOAIDEATHON 2026** (Problem Statement: **SOAIDEATHON-S1**)
+**Human-in-the-Loop Agentic AI for Autonomous Institutional Service Delivery**
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Key Pillars & Features
 
-- **Frontend**: React 19, Vite, Axios, Custom Modern CSS Design System.
-- **Backend**: Python 3, FastAPI, SQLAlchemy ORM, PyJWT, Pydantic v2.
-- **Database**: PostgreSQL (`ai_grievance_db`).
-- **AI Engine**: Ollama running `llama3.2:3b` at `http://localhost:11434`.
+1. **🤖 Multi-Step Agentic Reasoning (Ollama Llama 3.2 3B)**:
+   - Evaluates natural language intent, decomposes requests into sequential action graphs, checks policy constraints, and orchestrates workflows with zero paid API dependencies.
+
+2. **📜 Four Core Institutional Service Modules**:
+   - 📜 **Certificate Issuance**: Bonafide Certificates, Transcripts, NOC, and Character Certificates with attendance verification.
+   - 🔧 **Maintenance & Facilities**: Emergency plumbing, electrical, HVAC, and campus asset maintenance dispatch.
+   - 🔬 **Laboratory Bookings**: High-Performance NVIDIA A100 GPU Cluster and Robotics testbed reservations with conflict checks.
+   - ⚖️ **Grievance Escalation**: Scholarship fund delays, evaluation grade discrepancies, and academic redressal.
+
+3. **🚨 Human-in-the-Loop (HITL) Consequential Safeguards**:
+   - Safe operations execute autonomously.
+   - Consequential / high-risk operations (certificate issuance, budget spending, safety clearances) automatically pause at a **HITL Gate** awaiting administrator sign-off.
+
+4. **📜 Immutable Auditable Action Trail**:
+   - Full explainability ledger logging every agent thought, tool action, policy citation, timestamp, and human approver signature.
+
+5. **📖 Verified Policy Knowledge Base & Zero-Hallucination Guardrails**:
+   - RAG engine verifies institutional rules (`POL-CERT-01`, `POL-LAB-01`, etc.) and flags conflicts/uncertainties instead of fabricating answers.
+
+6. **🌐 Multilingual Natural Language Support**:
+   - Native input & template support for **English, Hindi, and Odia**.
 
 ---
 
-## 🚀 Quick Start Guide
+## 🌐 Live Application URLs
 
-### 1. Database Setup
-Ensure PostgreSQL is running locally and create the database:
-```sql
-CREATE DATABASE ai_grievance_db;
-```
-
-### 2. Ollama Local LLM
-Ensure Ollama is running and download the model:
-```bash
-ollama run llama3.2:3b
-```
-
-### 3. Backend Setup
-```bash
-cd backend
-# Activate virtual environment
-.\venv\Scripts\activate
-# Install requirements if needed
-pip install -r requirements.txt  # (or pip install fastapi uvicorn sqlalchemy psycopg2-binary pyjwt pwdlib argon2-cffi python-dotenv requests email-validator)
-
-# Run FastAPI server
-uvicorn main:app --reload --port 8000
-```
-API runs at: `http://127.0.0.1:8000` (Swagger UI at `/docs`).
-
-### 4. Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Frontend runs at: `http://localhost:5173`.
+| Service | Live URL | Description |
+|---|---|---|
+| **🎨 Web Application (Frontend)** | [http://localhost:5173](http://localhost:5173) | Interactive student & administrator portal |
+| **⚡ FastAPI Backend** | [http://127.0.0.1:8000](http://127.0.0.1:8000) | Agentic AI gateway & orchestration engine |
+| **📖 Interactive API Docs** | [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) | Swagger UI for endpoint testing |
 
 ---
 
 ## 🔑 Pre-Seeded Demo Accounts
 
-| Role | Email | Password |
-|---|---|---|
-| **Student Demo** | `student@college.edu` | `student123` |
-| **Admin Demo** | `admin@college.edu` | `admin123` |
+| Role | Email | Password | Role Description |
+|---|---|---|---|
+| **Student** | `student@college.edu` | `student123` | Submit requests, simulate agent plans, view audit trails |
+| **Dean / Admin (HITL)** | `admin@college.edu` | `admin123` | Authorize consequential actions, view master requests & policy base |
 
 ---
 
 ## 📚 Documentation
-- [Architecture & System Design](docs/ARCHITECTURE.md)
+- [Architecture & Design](docs/ARCHITECTURE.md)
 - [REST API Reference](docs/API_DOCUMENTATION.md)
+- [Cloud Deployment Guide](docs/DEPLOYMENT_GUIDE.md)

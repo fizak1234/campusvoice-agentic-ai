@@ -43,15 +43,59 @@ def init_db_schema():
     if "postgresql" in str(engine.url):
         with engine.connect() as conn:
             try:
+                # Users table
                 conn.execute(text("ALTER TABLE users ADD COLUMN IF NOT EXISTS role VARCHAR(50) DEFAULT 'user';"))
                 conn.execute(text("ALTER TABLE users ADD COLUMN IF NOT EXISTS created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();"))
+                
+                # Grievances table
                 conn.execute(text("ALTER TABLE grievances ADD COLUMN IF NOT EXISTS priority VARCHAR(50) DEFAULT 'Medium';"))
                 conn.execute(text("ALTER TABLE grievances ADD COLUMN IF NOT EXISTS ai_summary TEXT;"))
                 conn.execute(text("ALTER TABLE grievances ADD COLUMN IF NOT EXISTS created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();"))
                 conn.execute(text("ALTER TABLE grievances ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();"))
+                
+                # Service Requests table
+                conn.execute(text("""
+                    CREATE TABLE IF NOT EXISTS service_requests (
+                        id SERIAL PRIMARY KEY,
+                        user_id INTEGER NOT NULL REFERENCES users(id),
+                        request_type VARCHAR(50) NOT NULL DEFAULT 'Grievance',
+                        title VARCHAR(250) NOT NULL,
+                        description TEXT NOT NULL,
+                        category VARCHAR(100) NOT NULL,
+                        status VARCHAR(50) DEFAULT 'Pending',
+                        priority VARCHAR(50) DEFAULT 'Medium',
+                        detected_language VARCHAR(20) DEFAULT 'en',
+                        agent_plan TEXT,
+                        policy_citations TEXT,
+                        requires_hitl BOOLEAN DEFAULT FALSE,
+                        hitl_reason TEXT,
+                        hitl_decision VARCHAR(50),
+                        hitl_approver VARCHAR(100),
+                        hitl_notes TEXT,
+                        execution_result TEXT,
+                        ai_summary TEXT,
+                        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+                        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+                    );
+                """))
+                
+                # Audit Logs table
+                conn.execute(text("""
+                    CREATE TABLE IF NOT EXISTS audit_logs (
+                        id SERIAL PRIMARY KEY,
+                        request_id INTEGER NOT NULL REFERENCES service_requests(id) ON DELETE CASCADE,
+                        step_number INTEGER NOT NULL,
+                        actor VARCHAR(50) NOT NULL,
+                        action VARCHAR(100) NOT NULL,
+                        details TEXT NOT NULL,
+                        policy_ref VARCHAR(100),
+                        timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+                    );
+                """))
+                
                 conn.commit()
             except Exception as e:
-                logger.warning(f"Column check warning: {e}")
+                logger.warning(f"Database schema initialization note: {e}")
 
 
 def get_db():
